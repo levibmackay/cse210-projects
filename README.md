@@ -1,5 +1,14 @@
-# cse210-student-template
 This is now mine. Mwahahahahahah. Property of Levi Mackay
+
+
+
+My project will be better than everyone's.
+
+
+
+
+
+
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
