@@ -27,7 +27,6 @@ class Journal
 
     public void SaveToFile(string filename)
     {
-        // build the file content line by line
         string content = "";
         for (int i = 0; i < _entries.Count; i++)
         {
@@ -50,9 +49,9 @@ class Journal
                 continue;
 
             string[] parts = lines[i].Split('|');
-            if (parts.Length == 3)
+            if (parts.Length == 4)
             {
-                Entry entry = new Entry(parts[0], parts[1], parts[2]);
+                Entry entry = new Entry(parts[0], parts[1], parts[2], parts[3]);
                 _entries.Add(entry);
             }
         }

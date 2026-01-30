@@ -28,8 +28,12 @@ class Program
                 Console.Write("> ");
                 string response = Console.ReadLine();
 
+                Console.WriteLine("How do you feel today? (e.g., Happy, Sad, Excited)");
+                Console.Write("> ");
+                string mood = Console.ReadLine();
+
                 string date = DateTime.Now.ToShortDateString();
-                Entry entry = new Entry(date, prompt, response);
+                Entry entry = new Entry(date, prompt, response, mood);
                 journal.AddEntry(entry);
             }
             else if (choice == "2")
