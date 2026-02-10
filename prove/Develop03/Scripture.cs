@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+
 
 public class Scripture
 {
@@ -20,13 +22,25 @@ public class Scripture
     }
 
     public void HideRandomWords(int count)
+{
+    List<Word> visibleWords = new List<Word>();
+
+    foreach (Word word in _words)
     {
-        for (int i = 0; i < count; i++)
+        if (!word.IsHidden())
         {
-            int index = _random.Next(_words.Count);
-            _words[index].Hide();
+            visibleWords.Add(word);
         }
     }
+
+    for (int i = 0; i < count && visibleWords.Count > 0; i++)
+    {
+        int index = _random.Next(visibleWords.Count);
+        visibleWords[index].Hide();
+        visibleWords.RemoveAt(index);
+    }
+}
+
 
     public bool AllHidden()
     {
