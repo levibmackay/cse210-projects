@@ -7,29 +7,29 @@ public class Reference
 
     public Reference(string book, int chapter, int verse)
     {
-        this._book = book;
-        this._chapter = chapter;
-        this._verse = verse;
-        this._endVerse = verse;
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = verse;
     }
 
     public Reference(string book, int chapter, int verse, int endVerse)
     {
-        this._book = book;
-        this._chapter = chapter;
-        this._verse = verse;
-        this._endVerse = endVerse;
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = endVerse;
     }
 
     public string GetDisplayText()
     {
         if (_verse == _endVerse)
         {
-            return $"{_book} {_chapter}:{_verse}";
+            return _book + " " + _chapter + ":" + _verse;
         }
         else
         {
-            return $"{_book} {_chapter}:{_verse}-{_endVerse}";
+            return _book + " " + _chapter + ":" + _verse + "-" + _endVerse;
         }
     }
 }
