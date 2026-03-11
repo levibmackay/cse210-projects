@@ -16,7 +16,7 @@ public class ChecklistGoal : Goal
     {
         _currentCount++;
 
-        if (_currentCount == _targetCount)
+        if (_currentCount >= _targetCount)
         {
             _isComplete = true;
             return _points + _bonus;
@@ -29,11 +29,11 @@ public class ChecklistGoal : Goal
     {
         string status = _isComplete ? "[X]" : "[ ]";
 
-        return $"{status} {_name} -- Completed {_currentCount}/{_targetCount}";
+        return $"{status} {_name} ({_description} -- Completed {_currentCount}/{_targetCount}";
     }
 
     public override string GetStringRepresentation()
     {
-        return $"ChecklistGoal:{_name},{_description},{_points},{_targetCount},{_bonus}";
+        return $"ChecklistGoal:{_name},{_description},{_points},{_targetCount},{_bonus},{_currentCount}";
     }
 }

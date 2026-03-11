@@ -12,7 +12,7 @@ public class EternalGoal : Goal
 
     public override string GetDetailsString()
     {
-        return $"[∞] {_name} ({_description})";
+        return $"[ ] {_name} ({_description}) (∞)";
     }
 
     public override string GetStringRepresentation()

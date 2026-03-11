@@ -6,24 +6,25 @@ public class GoalManager
 {
     private List<Goal> _goals = new List<Goal>();
     private int _score = 0;
+    private int _level = 1;
 
     public void CreateGoal()
     {
-        Console.WriteLine("\nGoal Types:");
+        Console.WriteLine("\nThe types of Goals are: ");
         Console.WriteLine("1. Simple Goal");
         Console.WriteLine("2. Eternal Goal");
         Console.WriteLine("3. Checklist Goal");
 
-        Console.Write("Select type: ");
+        Console.Write("Which type of goal would you like to create? ");
         string type = Console.ReadLine();
 
-        Console.Write("Name: ");
+        Console.Write("What is the name of your goal? ");
         string name = Console.ReadLine();
 
-        Console.Write("Description: ");
+        Console.Write("What is a short description of it? ");
         string description = Console.ReadLine();
 
-        Console.Write("Points: ");
+        Console.Write("What is the amount of points associated with this goal? ");
         int points = int.Parse(Console.ReadLine());
 
         if (type == "1")
@@ -36,10 +37,10 @@ public class GoalManager
         }
         else if (type == "3")
         {
-            Console.Write("Target count: ");
+            Console.Write("How many times doesn this goal need to be accomplished for a bonus? ");
             int target = int.Parse(Console.ReadLine());
 
-            Console.Write("Bonus points: ");
+            Console.Write($"What is the bonus for accomplishing it {target} times? ");
             int bonus = int.Parse(Console.ReadLine());
 
             _goals.Add(new ChecklistGoal(name, description, points, target, bonus));
@@ -68,11 +69,20 @@ public class GoalManager
         _score += pointsEarned;
 
         Console.WriteLine($"You earned {pointsEarned} points!");
+
+        if (_score >= _level * 1000)
+        {
+            _level++;
+            Console.WriteLine($"🎉 LEVEL UP! You are now Level {_level}!");
+        }
     }
 
     public void SaveGoals()
     {
-        using (StreamWriter writer = new StreamWriter("goals.txt"))
+        Console.Write("Enter the filename to save goals: ");
+        string filename = Console.ReadLine();
+
+        using (StreamWriter writer = new StreamWriter(filename))
         {
             writer.WriteLine(_score);
 
@@ -87,7 +97,10 @@ public class GoalManager
 
     public void LoadGoals()
     {
-        if (!File.Exists("goals.txt"))
+        Console.Write("Enter the filename to load goals: ");
+        string filename = Console.ReadLine();
+
+        if (!File.Exists(filename))
             return;
 
         _goals.Clear();
