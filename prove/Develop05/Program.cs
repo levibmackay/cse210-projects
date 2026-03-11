@@ -1,3 +1,9 @@
+// EXCEEDING REQUIREMENTS
+// I added a gamification system that includes levels and titles.
+// As users earn points they level up and receive titles such as
+// "Seeker" or "Disciple". The level system is also saved and loaded
+// with the user's goals so progress is preserved between sessions.
+// -Levi Mackay
 using System;
 
 class Program
@@ -6,6 +12,8 @@ class Program
     {
         GoalManager manager = new GoalManager();
 
+        // Menu Options
+        // The score is tied to the file, so until they load a file/start a new one there won't be a score or nthg.
         bool running = true;
 
         while (running)

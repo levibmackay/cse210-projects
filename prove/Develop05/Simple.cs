@@ -1,3 +1,5 @@
+// SimpleGoal is a goal that can only be completed once.
+// After it is marked complete, the user can't earn points from it again.
 public class SimpleGoal : Goal
 {
     public SimpleGoal(string name, string description, int points)

@@ -1,3 +1,6 @@
+// ChecklistGoal is a goal that needs to be completed multiple times.
+// Each time the user records it they earn points, and when they hit
+// the target number they also get a bonus.
 public class ChecklistGoal : Goal
 {
     private int _targetCount;
@@ -27,6 +30,7 @@ public class ChecklistGoal : Goal
 
     public override string GetDetailsString()
     {
+        // Okay it took me a long time to learn this, but it's this cool! I love finding ways to shorted my code. 
         string status = _isComplete ? "[X]" : "[ ]";
 
         return $"{status} {_name} ({_description} -- Completed {_currentCount}/{_targetCount}";

@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
+// The abosilute WORK HORSE of this program.
+// Prety much everything comes through this guy
+// Loads, Saves, displays goals, records events and gets a title base d on the user and the level.
 public class GoalManager
 {
     private List<Goal> _goals = new List<Goal>();
@@ -47,6 +50,8 @@ public class GoalManager
         }
     }
 
+    // Loop through the list and display each goal with its progress
+    // This took me a long time to figure out and I don't understand it still completely
     public void DisplayGoals()
     {
         Console.WriteLine("\nGoals:");
@@ -84,7 +89,7 @@ public class GoalManager
 
         using (StreamWriter writer = new StreamWriter(filename))
         {
-            writer.WriteLine(_score);
+            writer.WriteLine($"{_score},{_level}");
 
             foreach (Goal g in _goals)
             {
@@ -107,7 +112,10 @@ public class GoalManager
 
         string[] lines = File.ReadAllLines("goals.txt");
 
-        _score = int.Parse(lines[0]);
+        // This is where the Points and the Level is separated. I have them saved on the same line in the file, so I did this to separate it
+        string[] header = lines[0].Split(",");
+        _score = int.Parse(header[0]);
+        _level = int.Parse(header[1]);
 
         for (int i = 1; i < lines.Length; i++)
         {
@@ -143,6 +151,14 @@ public class GoalManager
 
     public void DisplayScore()
     {
-        Console.WriteLine($"Current Score: {_score}");
+        Console.WriteLine($"Score: {_score} | Level: {_level} | Title: {GetTitle()}");
+    }
+    public string GetTitle()
+    {
+        if (_score >= 15000) return "Eternal Champion";
+        if (_score >= 7000) return "Master";
+        if (_score >= 3000) return "Disciple";
+        if (_score >= 1000) return "Seeker";
+        return "Beginner";
     }
 }
