@@ -4,6 +4,7 @@ class Video
     SetVideoDetails lets me set all the main info at once.
     AddComment adds a comment to the list.
     The getter methods let me access the data without directly touching the private fields. */
+    
     private string _title;
     private string _author;
     private int _length;
