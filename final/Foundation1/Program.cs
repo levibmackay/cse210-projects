@@ -1,4 +1,4 @@
-/* I'm really trying to get better at leaving comments. I'm trying to full document what I did.
+/* I'm really trying to get better at leaving comments. I'm trying to fully document what I did.
 At the career fair, I had an employer who mentioned that commenting and organization is something that they really look for.
 I DID NOT USE AI FOR THIS CODE. I'm just trying to get better at what we are taught to do. */
 
