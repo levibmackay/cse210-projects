@@ -1,6 +1,4 @@
 /*
-Reception.cs
-
 This class is for a reception event. It stores the title, description, date, time, address, and RSVP email.
 It has three methods:
 

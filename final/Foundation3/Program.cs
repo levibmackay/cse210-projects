@@ -1,6 +1,4 @@
 /*
-Program.cs
-
 This is the main file. It makes one event of each type (lecture, reception, outdoor), fills in their info,
 and then prints out the standard, full, and short details for each one so we can see the messages.
 

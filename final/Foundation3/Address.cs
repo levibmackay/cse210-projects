@@ -1,6 +1,4 @@
 /*
-Address.cs
-
 This class is just for storing address info like street, city, state, and country. 
 It has a method to get the full address as one string so other classes can easily use it. 
 It keeps all the address stuff in one place so the code is cleaner.

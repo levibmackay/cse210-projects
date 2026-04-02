@@ -1,6 +1,4 @@
 /*
-Outdoor.cs
-
 This class is for an outdoor event. It stores the title, description, date, time, address, and weather info.
 It has three methods:
 

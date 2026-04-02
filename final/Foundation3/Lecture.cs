@@ -1,6 +1,4 @@
 /*
-Lecture.cs
-
 This class is for a lecture event. It stores the title, description, date, time, address, speaker, and capacity.
 It has three methods:
 
