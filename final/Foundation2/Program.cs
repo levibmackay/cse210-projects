@@ -1,6 +1,6 @@
 // This is the main program where everything is tested. It creates sample addresses, customers, and orders.
 // Each order is given multiple products to show how the system handles real scenarios.
-// It then prints out the packing label, shipping label, and total cost for each order to verify that everything works together correctly.
+// It then prints out the packing label, shipping label, and total cost for each order to verify that everything works together correctly. 
 using System;
 
 class Program

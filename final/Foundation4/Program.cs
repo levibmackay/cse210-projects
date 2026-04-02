@@ -3,7 +3,7 @@ This is the main file that runs the program. It creates a list of different acti
 including running, cycling, and swimming. Each one is added to the same list using the base
 Activity type, which shows polymorphism in action. Then it loops through the list and calls
 GetSummary on each object, which prints out the correct information depending on the activity
-type. This keeps the program clean and flexible while using inheritance and method overriding.
+type. This keeps the program clean and flexible while using inheritance and method overriding. 
 */
 using System;
 
