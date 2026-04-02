@@ -1,4 +1,12 @@
-// Event.cs
+/*
+Event.cs
+
+This class is for any kind of event. It stores the basic info like title, description, date, time, and the address. 
+It has methods to show the standard details, full details, and a short description. 
+This is where the general info for all events is kept so the other event types can use it. 
+
+THIS IS NOT AI. I AM TRYING TO DEVELOP GOOD PROGRAMMING SKILLS LIKE COMMENTING IN YOUR CODE.
+*/
 public class Event
 {
     // Private variables

@@ -1,4 +1,15 @@
-// Outdoor.cs
+/*
+Outdoor.cs
+
+This class is for an outdoor event. It stores the title, description, date, time, address, and weather info.
+It has three methods:
+
+- StandardDetails(): basic info like title, description, date/time, and address
+- FullDetails(): all info including weather
+- ShortDescription(): a short line with type, title, and date
+
+THIS IS NOT AI. I AM TRYING TO DEVELOP GOOD PROGRAMMING SKILLS LIKE COMMENTING IN YOUR CODE.
+*/
 public class Outdoor : Event
 {
     private string _weather;
