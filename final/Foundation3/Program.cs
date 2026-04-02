@@ -10,22 +10,23 @@ class Program
 {
     static void Main(string[] args)
     {
+        Address addr1 = new Address("123 Main St", "Rexburg", "ID", "USA");
+        Address addr2 = new Address("456 Center St", "Provo", "UT", "USA");
+        Address addr3 = new Address("789 Park Ave", "Boise", "ID", "USA");
+
         Lecture lecture = new Lecture(
             "AI Talk", "Learn about AI", "April 5", "6:00 PM",
-            "123 Main St", "Rexburg", "ID", "USA",
-            "Elon Musk", 100
+            addr1, "Elon Musk", 100
         );
 
         Reception reception = new Reception(
             "Networking Night", "Meet professionals", "April 6", "7:00 PM",
-            "456 Center St", "Provo", "UT", "USA",
-            "rsvp@email.com"
+            addr2, "rsvp@email.com"
         );
 
         Outdoor outdoor = new Outdoor(
             "Summer Fest", "Food and games", "June 1", "2:00 PM",
-            "789 Park Ave", "Boise", "ID", "USA",
-            "Sunny"
+            addr3, "Sunny"
         );
 
         Event[] events = { lecture, reception, outdoor };

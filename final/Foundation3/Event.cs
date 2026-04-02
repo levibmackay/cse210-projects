@@ -11,29 +11,20 @@ public class Event
     private string _description;
     private string _date;
     private string _time;
+    private Address _address;
 
-    private string _street;
-    private string _city;
-    private string _state;
-    private string _country;
-
-    public Event(string title, string description, string date, string time,
-                 string street, string city, string state, string country)
+    public Event(string title, string description, string date, string time, Address address)
     {
         _title = title;
         _description = description;
         _date = date;
         _time = time;
-
-        _street = street;
-        _city = city;
-        _state = state;
-        _country = country;
+        _address = address;
     }
 
     public virtual string StandardDetails()
     {
-        return $"{_title}\n{_description}\n{_date} at {_time}\n{_street}, {_city}, {_state}, {_country}";
+        return $"{_title}\n{_description}\n{_date} at {_time}\n{_address.GetAddress()}";
     }
 
     public virtual string FullDetails()
